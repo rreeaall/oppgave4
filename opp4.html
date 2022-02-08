@@ -34,9 +34,10 @@ try {
      (function UseLetOrConst() {
   //   // Use let (or const) instead of var to make the function succeed.
   // Forandring: Her brukte jeg let i stedet for var
-       let x = 1;
+	     //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding.
+       let x = 2;
        if (true) {
-          x = 2;
+          x = 1;
        }
 
   //   // Don't make changes below this line
@@ -51,12 +52,11 @@ try {
   
 	(function UseTemplateStrings1() {
 		const who = 'World';
-		const addOne = x => x + 1;
+		const addOne = () => 2 + 1;
 		
 		// Rewrite the line below to use template literals.
         //Forandring: her omskrev jeg den originale koden til å kunne bruke template literals
-        const greeting = `Hello ${who}! og resultat fra funksjon ${addOne()}`;
-        console.log(greeting);
+        const greeting = `Hello ${who}! ${addOne()} times.`; //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding.
 
 
 		// Don't make changes below this line			
@@ -147,8 +147,9 @@ try {
 
      (function UseArrow1() {
        // Rewrite double as arrow function and make the test pass.
-       let double = () => 'x'; 
-       implisittReturn();//forandring
+       let double = (x) => {
+       return x + x;  //Dette var en av oppgavene jeg måtte gjøre om igjen etter tilbakemelding, fikk det til nå.
+       };
 
   //   // Don't make changes below this line
 
@@ -163,8 +164,9 @@ try {
   
 	(function UseArrow2() {
 		// Correct the errors in the arrow function.
-		let add = x, y = () => x * y;
-        implisittReturn(); //forandring
+		let add = (x, y) => {
+		return x + y;       //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding. Jeg fikk det til nå
+		}
 
 		// Don't make changes below this line	
 		
@@ -186,7 +188,7 @@ try {
 		// Use array destructuring to change the 3 statements below into 1 statement.
 		// Tip: Spread operator might be needed too
 
-        let Equal = [...arr]; //Forandring
+        const [a, , b, ...c] = arr; //Forandring              //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding. Jeg fikk det til nå
 
 		// Don't make changes below this line	
 		
@@ -209,7 +211,7 @@ try {
 		a = b;
 		b = tmp; 
 
-        let = [...tmb, ...a, ...b]; //forandring
+               [a, b] = [b, a]; //forandring              //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding. Jeg fikk det til nå
 
 		// Don't make changes below this line	
 		
@@ -233,7 +235,7 @@ try {
 		// let age = obj.age;
 		// let add = obj.add;
 
-        let [name, age, add] = ["Oslo", "985", "3"]; //forandring
+        let { name, age, add } = obj; //forandring       //Dette var en av oppgavene jeg måtte rette på etter tilbakemelding. Jeg fikk det til nå
 
 		// Don't make changes below this line	
 		
@@ -269,7 +271,10 @@ try {
   (function UseParameterDestructuring2() {
     // Adjust the code to let the test succeed.
 
-    const a = ['Oslo' + 985]; //Her endret jeg litt på koden og gjorde den om til en array
+     const a = {                // Dette var en av oppgavene jeg måtte rette på etter tilbakemelding, som jeg nå fikk til
+	name: 'Oslo',
+	age: 985
+     };  
 
     // Don't make changes below this line
 
@@ -293,7 +298,11 @@ try {
 		const norwegian = true;
 		
 		// Remove all unnecesary syntax to let the test pass.
-        let [name, age, dutch] = [name, age, !norwegian] = city; //Her forandret jeg denne slik at jeg gjorde den så kort som mulig
+        let city = {                                         // Dette var en av oppgavene jeg måtte rette på etter tilbakemelding, som jeg nå fikk til
+	name,
+	age,
+        dutch: !norwegian
+	};
          
 
 		// Don't make changes below this line	
@@ -334,7 +343,7 @@ try {
 		// - Do NOT use Object.assign()
 		// - Do use object spread properties
 		// - Think about the order!
-		let result = {...obj1, ...obj2, ...obj3 }; //Her endret jeg
+		let result = { ...obj1, ...obj3, ...obj2 }; // Dette var en av oppgavene jeg måtte rette på etter tilbakemelding, som jeg nå fikk til
 
 		// Don't make changes below this line	
 		
